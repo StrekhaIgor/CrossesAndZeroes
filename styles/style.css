@@ -1,0 +1,122 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: brown;
+}
+
+body {
+    max-width: 960px;
+    width: 80vw;
+    background-color: blueviolet;
+    border: 1px solid black;
+    height: calc(100vh - 20px);
+    border-radius: 50px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+header {
+    text-align: center;
+    margin: 30px;
+    font-size: 24px;
+}
+
+main {
+    max-width: 960px;
+    min-width: 60px;
+    width: 30vw;
+    border-radius: 20px;
+    background-color: aqua;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+div {
+    width: 10vw;
+    height: 10vw;
+    font-size: 3vw;
+    text-align: center;
+    padding-top: 3vw;
+    margin: auto;
+}
+
+div:hover {
+    cursor: pointer;
+}
+
+#c11 {
+    border-right: 5px solid black;
+    border-bottom: 5px solid black;
+}
+
+#c12 {
+    border-right: 5px solid black;
+    border-bottom: 5px solid black;
+    border-left: 5px solid black;
+}
+
+#c13 {
+    border-bottom: 5px solid black;
+    border-left: 5px solid black;
+}
+
+#c21 {
+    border-right: 5px solid black;
+    border-bottom: 5px solid black;
+    border-top: 5px solid black;
+}
+
+#c22 {
+    border: 5px solid black;
+}
+
+#c23 {
+    border-top: 5px solid black;
+    border-bottom: 5px solid black;
+    border-left: 5px solid black;
+}
+
+#c31 {
+    border-right: 5px solid black;
+    border-top: 5px solid black;
+}
+
+#c32 {
+    border-right: 5px solid black;
+    border-top: 5px solid black;
+    border-left: 5px solid black;
+}
+
+#c33 {
+    border-top: 5px solid black;
+    border-left: 5px solid black;
+}
+
+section {
+    margin: auto;
+    text-align: center;
+    width: 40vh;
+}
+
+section h1 {
+    color: red;
+    width: 50%;
+    border: 2px solid black;
+    margin: 20px;
+    border-radius: 5px;
+}
+
+section h1:hover {
+    cursor: pointer;
+}
+
+.menu {
+    display: flex;
+    flex-wrap: nowrap;
+    margin: auto;
+}
