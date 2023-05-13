@@ -1,4 +1,5 @@
 import { gameObj } from "./model.js";
+import { finishGame } from "./view.js";
 
 
 export let startPanel = document.getElementById('start');
@@ -18,7 +19,7 @@ for (let elem of gameObj.children) {
             alert('game over');
         }
         if (gameObj.isWin) {
-            window.location.href='html2.html';
+            finishGame(gameObj);
         }
     });
 }
