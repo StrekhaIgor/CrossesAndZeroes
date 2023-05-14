@@ -41,4 +41,11 @@ gameObj.checkCondition = function () {
             };
         };
     };
+    let emptyFielsds = [];
+    for (let i in model) {
+        if (model[i] === '') {
+            emptyFielsds.push(i);
+        };
+    };
+    gameObj.getEmptyFields = emptyFielsds;
 }

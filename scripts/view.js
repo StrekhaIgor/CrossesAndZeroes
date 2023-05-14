@@ -15,5 +15,9 @@ export function finishGame(gameObj) {
     let finishAlert = document.createElement('div');
     finishAlert.innerHTML=`${gameObj.winner} победил`;
     finishAlert.style.position='absolute';
+    finishAlert.className = 'finish';
+    for (let i of gameObj.winnerCombination) {
+        gameObj.children[i].classList.add('win');
+    }
     document.body.prepend(finishAlert);
 }
