@@ -25,22 +25,30 @@ gameObj.setSymbols = function(symbolPlayer) {
 
 gameObj.checkCondition = function () {
     let model = Array.from(this.children).map(el => el.innerHTML);
+    gameObj.isDanger = false;
+    gameObj.dangerComb = [];
+    gameObj.winnerCombination = [];
     if (model.filter(el => el == '').length == 0) {
         this.isFinish = true;
     };
     for (let comb of combinations) {
-        let winner = model[comb[0]];
-        if (!winner) continue;
-        let count = 0;
+        let stringComb = '';
         for (let j of comb) {
-            if (model[j] == winner) count++;
-            if (count === 3) {
-                this.isWin = true;
-                this.winner = winner;
-                this.winnerCombination = comb;
-            };
+            stringComb += model[j];
+        };
+        if (stringComb === 'XXX' || stringComb === 'OOO') {
+            this.isWin = true;
+            this.winner = stringComb[0];
+            this.winnerCombination = comb;
+            return;
+        };
+        if (stringComb === 'XX' || stringComb === 'OO') {
+            this.isDanger = true;
+            this.dangerComb.push(comb);
+            this.danger = stringComb[0];
         };
     };
+
     let emptyFielsds = [];
     for (let i in model) {
         if (model[i] === '') {

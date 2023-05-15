@@ -1,6 +1,6 @@
 import { engineMove } from "./engine.js";
 import { gameObj } from "./model.js";
-import { finishGame } from "./view.js";
+import { danger, finishGame } from "./view.js";
 
 
 export let startPanel = document.getElementById('start');
@@ -21,7 +21,7 @@ for (let elem of gameObj.children) {
         this.innerHTML = gameObj.symbolPlayer;
         gameObj.checkCondition();
         if (gameObj.isFinish) {
-            alert('game over');
+            finishGame(gameObj);
             return;
         }
         if (gameObj.isWin) {
@@ -30,13 +30,21 @@ for (let elem of gameObj.children) {
         }
         engineMove(gameObj);
         gameObj.checkCondition();
+        if (!(gameObj.isDanger)) {
+            for (let i of gameObj.children) {
+                i.className = 'gameField';
+            }
+        }
         if (gameObj.isFinish) {
-            alert('game over');
+            finishGame(gameObj);
             return;
         }
         if (gameObj.isWin) {
             finishGame(gameObj);
             return;
+        }
+        if (gameObj.isDanger) {
+            danger(gameObj);
         }
     });
 }

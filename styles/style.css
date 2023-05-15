@@ -136,4 +136,9 @@ div.finish {
     background-color: bisque;
     top: 20vh;
     left: 10vw;
+    border-radius: 10px;
+}
+
+.danger {
+    background-color: orange;
 }
